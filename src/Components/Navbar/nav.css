@@ -64,31 +64,23 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
-    height: auto; /* navbar height adjust on mobile */
-    padding: 1rem;
+    align-items: flex-start;
+    padding: 1rem 5%;
   }
 
   .nav-left ul {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .resume-btn {
+    margin-top: 1rem;
     width: 100%;
-    margin-top: 10px;
-  }
-
-  .nav-left li {
-    margin: 10px 0;
-  }
-
-  .nav-right {
-    margin-top: 15px;
-  }
-
-  .nav-right .resume-btn {
-    width: 100%; /* full width button on mobile */
     text-align: center;
   }
 }
