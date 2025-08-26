@@ -1,0 +1,105 @@
+.projects {
+  padding: 5rem 10%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.section-title span {
+  color: #ff4ecd;
+}
+
+/* Project Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.project-card p {
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-card ul {
+  text-align: left;
+  margin: 1rem 0 1rem 1.5rem;
+  color: #f5f5f5;
+}
+
+.project-card li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Highlight AgroFarm */
+.highlight {
+  border: 2px solid #ff4ecd;
+  background: rgba(255, 76, 205, 0.08);
+}
+
+.project-role {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #aaa;
+}
+
+/* Read More Button */
+.readmore-btn {
+  margin-top: 1rem;
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #ff914d, #8c52ff);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.readmore-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #8c52ff, #ff914d);
+}
+
+/* GitHub Links */
+.repo-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ff914d;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.repo-link:hover {
+  color: #ffd700;
+}
+
+/* Grid for other projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}

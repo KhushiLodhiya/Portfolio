@@ -1,0 +1,144 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;   
+  padding: 6rem 10% 4rem;   
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f 0%, #8c52ff 50%, #ff914d 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  min-height: 90vh;  
+}
+
+/* Left Side Text */
+.hero-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-left h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.hero-left span {
+  color: #ffd700;
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f1f1f1;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Connect button */
+.connect-btn {
+  background: linear-gradient(90deg, #ff914d, #8c52ff);
+  color: white;
+  border: none;
+}
+
+.connect-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Projects button */
+.project-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+}
+
+.project-btn:hover {
+  background: white;
+  color: #8c52ff;
+  transform: scale(1.05);
+}
+
+/* Right Side Image */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 300px;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  margin-top: 2rem;   /* ✅ thoda upar neeche adjust */
+}
+
+
+/* Decorative background shapes */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -100px;
+  left: -100px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-left {
+    margin-bottom: 2rem;
+  }
+
+  .hero-right img {
+    width: 220px;
+  }
+
+  .hero-left h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-left p {
+    font-size: 1rem;
+  }
+}
