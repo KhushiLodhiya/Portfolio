@@ -1,144 +1,244 @@
+:root {
+  --bg-main: #0b0f14;
+  --accent: #38f2ff;
+  --accent-soft: #7c6cff;
+  --text-main: #e6eaf0;
+  --text-muted: #9aa3b2;
+}
+
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;   
-  padding: 6rem 10% 4rem;   
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1e1e2f 0%, #8c52ff 50%, #ff914d 100%);
-  color: white;
   position: relative;
+  min-height: 100vh;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-main);
+  color: var(--text-main);
   overflow: hidden;
 }
 
-.hero {
-  min-height: 90vh;  
+/* GRID BACKGROUND  */
+.bg-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: moveGrid 30s linear infinite;
+  z-index: 0;
 }
 
-/* Left Side Text */
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
+/*  LEFT  */
 .hero-left {
-  flex: 1;
-  max-width: 600px;
+  max-width: 520px;
+  z-index: 2;
 }
 
-.hero-left h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.hero-left span {
-  color: #ffd700;
+.intro-line {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  animation: fadeUp 1s ease forwards;
 }
 
-.hero-left p {
-  font-size: 1.2rem;
+.name {
+  font-size: 3.4rem;
+  font-weight: 700;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-desc {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  animation: fadeUp 1.4s ease forwards;
+}
+
+.hero-desc span {
+  color: var(--accent-soft);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #f1f1f1;
-  margin-bottom: 2rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  animation: fadeUp 1.6s ease forwards;
 }
 
-/* Buttons */
+/*  BUTTONS  */
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
-.btn {
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
+.hero-btn {
+  padding: 12px 34px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Connect button */
-.connect-btn {
-  background: linear-gradient(90deg, #ff914d, #8c52ff);
-  color: white;
-  border: none;
-}
-
-.connect-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Projects button */
-.project-btn {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
   text-decoration: none;
+  transition: all 0.4s ease;
 }
 
-.project-btn:hover {
-  background: white;
-  color: #8c52ff;
-  transform: scale(1.05);
+.hero-btn.primary {
+  background: var(--accent);
+  color: #0b0f14;
 }
 
-/* Right Side Image */
+.hero-btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(56, 242, 255, 0.4);
+}
+
+.hero-btn.ghost {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--text-main);
+}
+
+.hero-btn.ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/*  RIGHT IMAGE  */
 .hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  z-index: 2;
 }
 
-.hero-right img {
+.photo-wrapper {
   width: 300px;
-  border-radius: 50%;
-  border: 6px solid white;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  margin-top: 2rem;   /* ✅ thoda upar neeche adjust */
+  height: 380px;
+  position: relative;
+  clip-path: polygon(
+    10% 0%,
+    90% 5%,
+    100% 90%,
+    85% 100%,
+    0% 95%,
+    5% 10%
+  );
+  border: 2px solid var(--accent-soft);
+  animation: floatPhoto 6s ease-in-out infinite;
+  overflow: hidden;
 }
 
+/* images */
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.8s ease;
+}
 
-/* Decorative background shapes */
-.hero::before {
+.real-photo {
+  z-index: 2;
+}
+
+.ghibli-photo {
+  z-index: 3;
+  opacity: 0;
+  transform: scale(1.05);
+  filter: saturate(1.2) brightness(1.05);
+}
+
+/* hover ghibli */
+.ghibli-hover:hover .real-photo {
+  opacity: 0;
+  transform: scale(0.95);
+  filter: blur(1px);
+}
+
+.ghibli-hover:hover .ghibli-photo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* glow */
+.ghibli-hover::before {
   content: "";
   position: absolute;
-  width: 350px;
-  height: 350px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  top: -100px;
-  left: -100px;
+  inset: -20%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.18),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
 }
 
-.hero::after {
+.ghibli-hover:hover::before {
+  opacity: 1;
+}
+
+/* dashed rotating border */
+.photo-wrapper::after {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  bottom: -150px;
-  right: -150px;
+  inset: -6px;
+  border: 1px dashed var(--accent);
+  animation: rotateBorder 12s linear infinite;
 }
 
-/* Responsive */
+/*  ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatPhoto {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes rotateBorder {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/*  RESPONSIVE  */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 2rem;
+    padding: 120px 6% 60px;
   }
 
-  .hero-left {
-    margin-bottom: 2rem;
+  .hero-buttons {
+    justify-content: center;
   }
 
-  .hero-right img {
-    width: 220px;
+  .hero-right {
+    margin-top: 50px;
   }
 
-  .hero-left h1 {
-    font-size: 2.4rem;
-  }
-
-  .hero-left p {
-    font-size: 1rem;
+  .name {
+    font-size: 2.6rem;
   }
 }

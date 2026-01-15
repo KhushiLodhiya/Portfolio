@@ -1,78 +1,139 @@
-import React, { useState } from "react";
+import React from "react";
 import "./project.css";
 
 function Projects() {
-  const [showMore, setShowMore] = useState(false);
-
   return (
     <section id="projects" className="projects">
-      <h2 className="section-title">My <span>Projects</span></h2>
 
-      {/* AgroFarm Highlight */}
-      <div className="project-card highlight">
-        <h3>AgroFarm – Intelligent AgriTech Ecosystem</h3>
-        <p className="project-role">
-          <strong>Role:</strong> Frontend Developer
+      <div className="bg-lines"></div>
+
+      {/* ===== TITLE ===== */}
+      <div className="projects-header">
+        <h2 className="section-title">
+          Selected <span>Projects</span>
+        </h2>
+        <p className="projects-sub">
+          A few meaningful works where I explored real-world problems,
+          clean UI, and thoughtful engineering.
         </p>
+      </div>
+
+      {/* ===== FEATURED PROJECT ===== */}
+      <div className="project-block featured">
+        <div className="project-meta">
+          <span>Hackathon · 2024</span>
+        </div>
+
+        <h3>AgroFarm — Intelligent AgriTech Ecosystem</h3>
+
+        <p className="project-role">
+          Frontend Developer · CodeXccelerate (Gateway University, Delhi)
+        </p>
+
         <p>
-          AgroFarm is a full-stack web platform built to bridge the gap between 
-          farmers and industries, empowering direct communication, resource sharing, 
-          and transparent crop trading. This project was showcased at the national-level 
-          hackathon <strong>CodeXccelerate, Gateway University Delhi</strong> where we secured 
+          AgroFarm is a full-stack AgriTech platform designed to bridge the
+          gap between farmers and industries through transparent crop
+          trading, direct communication, and shared resources.
+        </p>
+
+        <p>
+          Showcased at a national-level hackathon where our team secured
           <strong> 15th place</strong>.
         </p>
 
-        {showMore && (
-          <div className="project-details">
-            <h4>Why AgroFarm?</h4>
-            <ul>
-              <li>🌾 Bridges the farmer–industry gap by eliminating middlemen.</li>
-              <li>🤝 Empowers small farmers with a community-driven learning space.</li>
-              <li>💰 Promotes fair trade via real-time market insights.</li>
-              <li>⚡ Boosts smart agriculture through soil testing and analytics.</li>
-              <li>📱 Encourages rural tech adoption with simple, regional-friendly design.</li>
-              <li>🇮🇳 Supports India’s Digital Agriculture Mission & Atmanirbhar Bharat vision.</li>
-            </ul>
-          </div>
-        )}
-
-        <button className="readmore-btn" onClick={() => setShowMore(!showMore)}>
-          {showMore ? "Show Less" : "Read More"}
-        </button>
+        <a
+          href="https://github.com/yourgithub/agrofarm"
+          target="_blank"
+          rel="noreferrer"
+          className="project-btn"
+        >
+          View on GitHub
+        </a>
       </div>
 
-<div className="project-card">
-          <h3>Portfolio</h3>
-          <p>A modern and responsive portfolio website built using React, Tailwind CSS, and custom animations. It highlights my skills, projects, achievements, and contact information in a professional manner. The design is focused on minimalism and user experience with smooth interactions and clean layouts.</p>
-          <a href="https://github.com/yourgithub/spotify-clone" target="_blank" rel="noreferrer" className="repo-link">
-            View on GitHub
-          </a>
+      {/* ===== SIH PROJECT ===== */}
+      <div className="project-block">
+        <div className="project-meta">
+          <span>Smart India Hackathon</span>
         </div>
-      {/* Other Projects */}
-      <div className="projects-grid">
-        <div className="project-card">
-          <h3>Coca-Cola Website Clone</h3>
-          <p>Frontend clone of Coca-Cola’s official website.</p>
-          <a href="https://github.com/KhushiLodhiya/Website-1" target="_blank" rel="noreferrer" className="repo-link">
-            View on GitHub
+
+        <h3>GradLink — Alumni & Student Engagement Platform</h3>
+
+        <p>
+          GradLink is a centralized platform for alumni data management,
+          mentorship, and institutional engagement across campuses.
+        </p>
+
+        <ul>
+          <li>Hybrid onboarding via domain email & ERP verification</li>
+          <li>Role-based dashboards for students, alumni & institutes</li>
+          <li>Mentorship, internships & career tracking</li>
+          <li>Fundraising & events with Razorpay integration</li>
+          <li>Auto alumni assignment after graduation</li>
+        </ul>
+
+        <p className="muted">
+          Designed to ensure authenticity, engagement, and scalability.
+        </p>
+
+        <a
+          href="https://github.com/KhushiLodhiya/SIH_gradlink"
+          target="_blank"
+          rel="noreferrer"
+          className="project-btn"
+        >
+          View on GitHub
+        </a>
+      </div>
+
+      {/* ===== OTHER PROJECTS ===== */}
+      <div className="project-list">
+
+        <div className="project-block small">
+          <h4>Portfolio Website</h4>
+          <p>
+            Personal portfolio built with React featuring smooth animations
+            and a minimal UI philosophy.
+          </p>
+
+          <a
+            href="https://github.com/KhushiLodhiya/Portfolio"
+            target="_blank"
+            rel="noreferrer"
+            className="project-btn small-btn"
+          >
+            GitHub
           </a>
         </div>
 
-        <div className="project-card">
-          <h3>Moooi Website Clone</h3>
-          <p>Pixel-perfect clone of Mooi furniture website.</p>
-          <a href="https://github.com/KhushiLodhiya/clone_Moooi_rect" target="_blank" rel="noreferrer" className="repo-link">
-            View on GitHub
+        <div className="project-block small">
+          <h4>Coca-Cola Website Clone</h4>
+          <p>Frontend recreation of Coca-Cola’s official website.</p>
+
+          <a
+            href="https://github.com/KhushiLodhiya/Website-1"
+            target="_blank"
+            rel="noreferrer"
+            className="project-btn small-btn"
+          >
+            GitHub
           </a>
         </div>
 
-        <div className="project-card">
-          <h3>Spotify Clone</h3>
-          <p>Music streaming clone built with React.</p>
-          <a href="https://github.com/yourgithub/spotify-clone" target="_blank" rel="noreferrer" className="repo-link">
-            View on GitHub
+        <div className="project-block small">
+          <h4>Moooi Website Clone</h4>
+          <p>Pixel-perfect clone of Moooi’s furniture website.</p>
+
+          <a
+            href="https://github.com/KhushiLodhiya/clone_Moooi_rect"
+            target="_blank"
+            rel="noreferrer"
+            className="project-btn small-btn"
+          >
+            GitHub
           </a>
         </div>
+
       </div>
     </section>
   );

@@ -1,75 +1,68 @@
 import React from "react";
-import image from '../../Assets/portfolio-pp.jpg'
 import "./about.css";
 
-function AboutPage() {
+function About() {
   return (
-    <section className="about">
-      <h2 className="section-title">
-        About <span>Me</span>
-      </h2>
+    <section className="about" id="about">
+      {/* background grid */}
+      <div className="bg-lines"></div>
 
       <div className="about-container">
-        {/* Left: Text */}
-        <div className="about-text">
-          <p>
-            I’m <span className="highlight">Khushi Lodhiya</span>, 
-            a self-motivated <strong>Full Stack Developer</strong> 
-            with a passion for building scalable applications 
-            and creating user-friendly digital solutions.  
+        {/* LEFT TEXT */}
+        <div className="about-left">
+          <span className="about-eyebrow">About Me</span>
+
+          <h2 className="about-title">
+            A developer who enjoys building
+            <span> thoughtful digital experiences</span>
+          </h2>
+
+          <p className="about-text">
+            I’m <strong>Khushi Lodhiya</strong>, a software development student
+            with a growing passion for frontend development and clean user
+            interfaces.
           </p>
 
-          <p>
-            Currently pursuing <strong>B.Tech in Computer Science (2024–2028)</strong>, 
-            with a <span className="highlight">9.40 CGPA (1st Year)</span>. 
-            Alongside academics, I am continuously upskilling in modern technologies 
-            and contributing to projects that make an impact.  
+          <p className="about-text">
+            My journey into web development began with curiosity — experimenting
+            with layouts, animations, and interactions — and gradually evolved
+            into a deep interest in crafting intuitive, user-focused products.
           </p>
 
-          <h3>Education</h3>
-          <ul className="edu-list">
-            <li>
-              <strong>B.Tech CSE</strong> — 2024–2028, Ongoing 
-              <span> | CGPA: 9.40 (1st Year)</span>
-            </li>
-            <li>
-              <strong>Shubham School, Rajkot</strong> — Class 12th PCM (2024) 
-              <span> | 72%</span>
-            </li>
-            <li>
-              <strong>Shubham School, Rajkot</strong> — Class 10th (2022) 
-              <span> | 82%</span>
-            </li>
-          </ul>
+          <p className="about-text">
+            I enjoy working at the intersection of logic and creativity, where
+            design meets code. I focus on writing clean, maintainable code,
+            building responsive layouts, and continuously refining the user
+            experience.
+          </p>
 
-          <h3>Highlights</h3>
-          <ul className="highlights-list">
-            <li>Strong foundation in <strong>Frontend & Backend Development</strong></li>
-            <li>Active participant in <strong>Hackathons & Team Projects</strong></li>
-            <li>Ranked <strong>15th</strong> in a National Hackathon (CodeXccelerate, Delhi)</li>
-            <li>Interested in <strong>Open Source & Collaborative Development</strong></li>
-          </ul>
-
-          <h3>Contact</h3>
-          <p>
-            Email:{" "}
-            <a href="mailto:lodhiyakhushi99@gmail.com">
-              lodhiyakhushi99@gmail.com
-            </a>
+          <p className="about-text highlight">
+            Currently, I’m seeking <strong>internship</strong> and{" "}
+            <strong>freelance opportunities</strong> where I can contribute,
+            learn from real-world challenges, and grow as a developer.
           </p>
         </div>
 
-        {/* Right: Image */}
+        {/* RIGHT STATS */}
         <div className="about-right">
-          <img
-            src={image} 
-            alt="About"
-            className="about-img"
-          />
+          <div className="about-card">
+            <h3>3+</h3>
+            <p>Projects Built</p>
+          </div>
+
+          <div className="about-card">
+            <h3>Frontend</h3>
+            <p>Focused Development</p>
+          </div>
+
+          <div className="about-card">
+            <h3>Continuous</h3>
+            <p>Learning Mindset</p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default AboutPage;
+export default About;
