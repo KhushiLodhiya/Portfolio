@@ -43,7 +43,7 @@ function Navbar() {
         <button
           className="resume-btn"
           onClick={() =>
-            window.open("/Khushi_Lodhiya_Resume.pdf", "_blank")
+            window.open("Khushi Lodhiya (1).pdf", "_blank")
           }
         >
           View Resume
